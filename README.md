@@ -17,3 +17,19 @@ Hexagonal Architecture layers
 ## Quality attributes
 
 ***TBD***
+
+
+
+> NOTES:
+>
+> For cyclomatic metric run:
+>
+> ```shell
+> lizard -l cpp . -x"./Drivers/*" -x"./Debug/*" -x"./Core/*"
+> ```
+>
+> For line number and other:
+>
+> ```shell
+> scc --cocomo-project-type organic --ci -c .\Application\ .\Patterns\
+> ```
