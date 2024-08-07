@@ -1,3 +1,5 @@
+#ifndef DEFAULT_OBJECTS_HPP__  // Prevenção contra inclusão múltipla do arquivo de cabeçalho.
+#define DEFAULT_OBJECTS_HPP__
 
 #include "core.h"
 
@@ -21,3 +23,5 @@ struct DigitalInputConfig
     DigitalInputConfig(GPIO_TypeDef *port, std::uint16_t pin)
         : port(port), pin(pin) {}
 };
+
+#endif

@@ -3,6 +3,7 @@
 
 #include <cstdint>  // Inclui a biblioteca padrão de tipos inteiros de largura fixa (como uint16_t).
 #include "core.h"  // Inclui um cabeçalho adicional que contém definições e declarações usadas neste arquivo.
+#include "default_objects.hpp"  // Inclui o novo cabeçalho que define a struct DigitalInputConfig.
 
 namespace DIState 
 // Namespace para definir os estados do pino digital.
