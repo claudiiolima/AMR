@@ -1,8 +1,14 @@
-#include <iostream>
-
+#include <limits.h>
 #include "gtest/gtest.h"
+#include "digital_input.hpp"
 
-TEST(sample_test_case, sample_test)
+namespace
 {
-    EXPECT_EQ(1, 1);
+TEST(DigitalInput, Negative)
+{
+    Proxies::DigitalInputConfig config = {.port = (Proxies::DigitalInputObj*)0, .pin = 0};
+
+    DigitalInput di(config);
+}
+
 }
