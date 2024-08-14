@@ -1,0 +1,4 @@
+Binary 1.303.756 bytes
+
+  RAM:        1744 B       128 KB      1.33%
+FLASH:       10692 B         1 MB      1.02%
