@@ -1,5 +1,5 @@
-#ifndef MOCK_H__
-#define MOCK_H__
+#ifndef MOCK_CORE_H__
+#define MOCK_CORE_H__
 
 #ifdef __cplusplus
 extern "C" {
