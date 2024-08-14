@@ -37,7 +37,7 @@ public:
     virtual void Sample() = 0;  // Declaração da função virtual pura para amostrar o estado do botão.
     virtual bool GetState() = 0;  // Declaração da função virtual pura para obter o estado do botão.
     virtual ~Button() = default;  // Declaração do destrutor virtual.
-}
+};
 
 class ButtonAdapter : public Button 
 // Declaração da classe ButtonAdapter que herda da classe Button.

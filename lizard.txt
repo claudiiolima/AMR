@@ -1,0 +1,69 @@
+================================================
+  NLOC    CCN   token  PARAM  length  location  
+------------------------------------------------
+       8      1     57      1      11 ButtonAdapter::ButtonAdapter@20-30@.\Patterns\Adapter\button.cpp
+       4      1     12      0       5 ButtonAdapter::~ButtonAdapter@32-36@.\Patterns\Adapter\button.cpp
+      24      5    100      0      31 ButtonAdapter::Sample@49-79@.\Patterns\Adapter\button.hpp
+       4      1     11      0       5 ButtonAdapter::GetState@81-85@.\Patterns\Adapter\button.hpp
+       5      1     36      2       6 LampAdapter::LampAdapter@6-11@.\Patterns\Adapter\lamp.cpp
+       5      1     41      3       6 LampAdapter::LampAdapter@13-18@.\Patterns\Adapter\lamp.cpp
+       4      1     12      0       5 LampAdapter::~LampAdapter@20-24@.\Patterns\Adapter\lamp.cpp
+       4      1     31      1       6 LampAdapter::Set@28-33@.\Patterns\Adapter\lamp.hpp
+       5      1     39      1       6 LedAdapter::LedAdapter@24-29@.\Patterns\Adapter\led.cpp
+      12      2     63      2      15 LedAdapter::LedAdapter@31-45@.\Patterns\Adapter\led.cpp
+       4      1     12      0       5 LedAdapter::~LedAdapter@47-51@.\Patterns\Adapter\led.cpp
+       4      1     17      0       5 LedAdapter::Set@51-55@.\Patterns\Adapter\led.hpp
+       4      1     17      0       5 LedAdapter::Reset@57-61@.\Patterns\Adapter\led.hpp
+      10      2     48      0      14 LedAdapter::GetState@63-76@.\Patterns\Adapter\led.hpp
+      11      2     35      0      14 LedAdapter::Toggle@78-91@.\Patterns\Adapter\led.hpp
+       4      1     27      2       5 SensorAdapter::SensorAdapter@6-10@.\Patterns\Adapter\sensor.cpp
+       4      1     12      0       5 SensorAdapter::~SensorAdapter@12-16@.\Patterns\Adapter\sensor.cpp
+       5      1     26      0       6 SensorAdapter::Sample@28-33@.\Patterns\Adapter\sensor.hpp
+       4      1     11      0       5 SensorAdapter::GetRaw@35-39@.\Patterns\Adapter\sensor.hpp
+       2      1     23      2       2 AnalogInputConfig::AnalogInputConfig@12-13@.\Patterns\Default_Objects\default_objects.hpp
+       2      1     23      2       2 DigitalInputConfig::DigitalInputConfig@23-24@.\Patterns\Default_Objects\default_objects.hpp
+       3      1     25      2       4 AnalogInput::AnalogInput@5-8@.\Patterns\Proxy\analog_input.cpp
+       5      1     25      0       6 AnalogInput::Sample@10-15@.\Patterns\Proxy\analog_input.cpp
+       4      1     15      0       5 AnalogInput::Get@17-21@.\Patterns\Proxy\analog_input.cpp
+       3      1      7      0       4 AnalogInput::~AnalogInput@23-26@.\Patterns\Proxy\analog_input.cpp
+       3      1     25      2       4 AnalogOutput::AnalogOutput@6-9@.\Patterns\Proxy\analog_output.cpp
+       5      1     41      1       6 AnalogOutput::Set@11-16@.\Patterns\Proxy\analog_output.cpp
+       4      1     12      0       5 AnalogOutput::Get@18-22@.\Patterns\Proxy\analog_output.cpp
+       3      1      7      0       4 AnalogOutput::~AnalogOutput@24-27@.\Patterns\Proxy\analog_output.cpp
+       4      1     25      1       5 DigitalInput::DigitalInput@5-9@.\Patterns\Proxy\digital_input.cpp
+      10      2     48      0      14 DigitalInput::Read@11-24@.\Patterns\Proxy\digital_input.cpp
+       3      1      7      0       4 DigitalInput::~DigitalInput@26-29@.\Patterns\Proxy\digital_input.cpp
+       4      1     34      2       5 DigitalOutput::DigitalOutput@5-9@.\Patterns\Proxy\digital_output.cpp
+       4      1     37      3       5 DigitalOutput::DigitalOutput@11-15@.\Patterns\Proxy\digital_output.cpp
+      11      2     50      1      14 DigitalOutput::Write@17-30@.\Patterns\Proxy\digital_output.cpp
+      10      2     48      0      14 DigitalOutput::Read@32-45@.\Patterns\Proxy\digital_output.cpp
+      11      2     42      0      14 DigitalOutput::Toggle@47-60@.\Patterns\Proxy\digital_output.cpp
+       3      1      7      0       4 DigitalOutput::~DigitalOutput@62-65@.\Patterns\Proxy\digital_output.cpp
+17 file analyzed.
+==============================================================
+NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
+--------------------------------------------------------------
+     25       6.0     1.0       34.5         2     .\Patterns\Adapter\button.cpp
+     67      14.0     3.0       55.5         2     .\Patterns\Adapter\button.hpp
+     17       4.7     1.0       29.7         3     .\Patterns\Adapter\lamp.cpp
+     23       4.0     1.0       31.0         1     .\Patterns\Adapter\lamp.hpp
+     35       7.0     1.3       38.0         3     .\Patterns\Adapter\led.cpp
+     67       7.2     1.5       29.2         4     .\Patterns\Adapter\led.hpp
+     11       4.0     1.0       19.5         2     .\Patterns\Adapter\sensor.cpp
+     29       4.5     1.0       18.5         2     .\Patterns\Adapter\sensor.hpp
+     14       2.0     1.0       23.0         2     .\Patterns\Default_Objects\default_objects.hpp
+     17       3.8     1.0       18.0         4     .\Patterns\Proxy\analog_input.cpp
+     14       0.0     0.0        0.0         0     .\Patterns\Proxy\analog_input.hpp
+     18       3.8     1.0       21.2         4     .\Patterns\Proxy\analog_output.cpp
+     15       0.0     0.0        0.0         0     .\Patterns\Proxy\analog_output.hpp
+     19       5.7     1.3       26.7         3     .\Patterns\Proxy\digital_input.cpp
+     21       0.0     0.0        0.0         0     .\Patterns\Proxy\digital_input.hpp
+     45       7.2     1.5       36.3         6     .\Patterns\Proxy\digital_output.cpp
+     23       0.0     0.0        0.0         0     .\Patterns\Proxy\digital_output.hpp
+
+===============================================================================================================
+No thresholds exceeded (cyclomatic_complexity > 15 or length > 1000 or nloc > 1000000 or parameter_count > 100)
+==========================================================================================
+Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
+------------------------------------------------------------------------------------------
+       460       5.8     1.3       29.2       38            0      0.00    0.00
