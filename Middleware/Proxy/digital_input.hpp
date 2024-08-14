@@ -13,7 +13,7 @@ public:
   ~DigitalInput();
 
 private:
-  Proxies::DigitalInput &port; // Endereço da porta GPIO.
+  Proxies::DigitalInputObj &port; // Endereço da porta GPIO.
   Proxies::DigitalPin pin;     // Pino da porta GPIO.
 };
 

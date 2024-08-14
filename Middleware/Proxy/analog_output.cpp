@@ -2,7 +2,7 @@
 
 #include <algorithm>
 
-AnalogOutput::AnalogOutput(Proxies::AnalogOutput& hdac, Proxies::AnalogChannel channel)
+AnalogOutput::AnalogOutput(Proxies::AnalogOutputObj& hdac, Proxies::AnalogChannel channel)
   : hdac(hdac), channel(channel) {}
 
 /**

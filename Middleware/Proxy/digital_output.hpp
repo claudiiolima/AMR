@@ -15,7 +15,7 @@ public:
     ~DigitalOutput();
 
 private:
-    Proxies::DigitalOutput &port; // Endereço da porta GPIO.
+    Proxies::DigitalOutputObj &port; // Endereço da porta GPIO.
     Proxies::DigitalPin pin;      // Pino da porta GPIO.
 };
 

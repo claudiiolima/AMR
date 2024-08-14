@@ -1,6 +1,6 @@
 #include "analog_input.hpp"
 
-AnalogInput::AnalogInput(Proxies::AnalogInput &hadc, Proxies::Timeout timeout_ms = 1000)
+AnalogInput::AnalogInput(Proxies::AnalogInputObj &hadc, Proxies::Timeout timeout_ms = 1000)
   : hadc(hadc), timeout_ms(timeout_ms) {}
 
 /**

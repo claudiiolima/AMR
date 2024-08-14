@@ -6,7 +6,6 @@
 namespace Adapters
 {
 
-typedef std::uint32_t Ticks;
 typedef float LampPercentage;
 typedef std::uint32_t SensorRaw;
 

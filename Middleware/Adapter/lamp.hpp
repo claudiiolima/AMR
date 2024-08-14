@@ -16,7 +16,7 @@ public:
 class LampAdapter : public Lamp 
 {
 public:
-    LampAdapter(Proxies::AnalogOutput &dac, Proxies::AnalogChannel channel, Adapters::LampPercentage initial_value = 0.0f);
+    LampAdapter(Proxies::AnalogOutputObj &dac, Proxies::AnalogChannel channel, Adapters::LampPercentage initial_value = 0.0f);
     ~LampAdapter();
 
     /**

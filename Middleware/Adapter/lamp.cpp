@@ -1,6 +1,6 @@
 #include "lamp.hpp"
 
-LampAdapter::LampAdapter(Proxies::AnalogOutput &dac, Proxies::AnalogChannel channel, Adapters::LampPercentage initial_value)
+LampAdapter::LampAdapter(Proxies::AnalogOutputObj &dac, Proxies::AnalogChannel channel, Adapters::LampPercentage initial_value)
 {
   // Cria um novo objeto AnalogOutput.
   this->adaptee_ = new AnalogOutput(dac, channel);

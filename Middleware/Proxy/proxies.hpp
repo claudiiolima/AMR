@@ -8,10 +8,10 @@
 namespace Proxies
 {
 
-typedef ADC_HandleTypeDef AnalogInput;
-typedef DAC_HandleTypeDef AnalogOutput;
-typedef GPIO_TypeDef DigitalInput;
-typedef GPIO_TypeDef DigitalOutput;
+typedef ADC_HandleTypeDef AnalogInputObj;
+typedef DAC_HandleTypeDef AnalogOutputObj;
+typedef GPIO_TypeDef DigitalInputObj;
+typedef GPIO_TypeDef DigitalOutputObj;
 
 typedef std::uint32_t Timeout;
 typedef std::uint16_t DigitalPin;
@@ -26,13 +26,13 @@ enum DigitalState
 
 struct DigitalInputConfig
 {
-  DigitalInput* port; // Objeto GPIO.
+  DigitalInputObj* port; // Objeto GPIO.
   DigitalPin pin;     // Pino da porta GPIO.
 };
 
 struct DigitalOutputConfig
 {
-  DigitalOutput* port; // Objeto GPIO.
+  DigitalOutputObj* port; // Objeto GPIO.
   DigitalPin pin;      // Pino da porta GPIO.
 };
 
@@ -52,14 +52,14 @@ enum DOMap
 
 const DigitalInputConfig MappedDigitalInputs[DI_NUMBER_OF_MAPS] =
 {
-  [DI_A_0] = {.port = (DigitalInput*)GPIOA_BASE, .pin = GPIO_PIN_0},
+  [DI_A_0] = {.port = (DigitalInputObj*)GPIOA_BASE, .pin = GPIO_PIN_0},
 };
 
 const DigitalOutputConfig MappedDigitalOutputs[DO_NUMBER_OF_MAPS] =
 {
-  [DO_D_12] = {.port = (DigitalInput*)GPIOD_BASE, .pin = GPIO_PIN_12},
-  [DO_D_14] = {.port = (DigitalInput*)GPIOD_BASE, .pin = GPIO_PIN_14},
-  [DO_D_15] = {.port = (DigitalInput*)GPIOD_BASE, .pin = GPIO_PIN_15},
+  [DO_D_12] = {.port = (DigitalOutputObj*)GPIOD_BASE, .pin = GPIO_PIN_12},
+  [DO_D_14] = {.port = (DigitalOutputObj*)GPIOD_BASE, .pin = GPIO_PIN_14},
+  [DO_D_15] = {.port = (DigitalOutputObj*)GPIOD_BASE, .pin = GPIO_PIN_15},
 };
 
 }

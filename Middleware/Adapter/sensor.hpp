@@ -17,7 +17,7 @@ public:
 class SensorAdapter : public Sensor 
 {
 public:
-  SensorAdapter(Proxies::AnalogInput &adc, Proxies::Timeout timeout);
+  SensorAdapter(Proxies::AnalogInputObj &adc, Proxies::Timeout timeout);
   ~SensorAdapter();
 
   /**
