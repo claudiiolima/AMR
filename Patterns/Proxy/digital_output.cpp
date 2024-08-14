@@ -1,65 +1,71 @@
-#include "digital_output.hpp"  // Inclui o cabeçalho para a classe DigitalOutput, que contém a definição da classe e suas declarações de função.
+#include "digital_output.hpp"
 
-#include "core.h"  // Inclui um cabeçalho adicional que contém definições e declarações usadas neste arquivo.
-
-DigitalOutput::DigitalOutput(GPIO_TypeDef *port, std::uint16_t pin) : port(port), pin(pin) 
-// Construtor da classe DigitalOutput que inicializa os membros da classe `port` e `pin` com os valores passados como parâmetros.
+DigitalOutput::DigitalOutput(const Proxies::DigitalOutputConfig &config, Proxies::DigitalState initial_value) : port(*config.port), pin(config.pin)
 {
-    this->Write(DOState::Unsetted);  // Define o estado inicial do pino digital como Unsetted (pino está LOW).
+  // Escreve o estado inicial do pino digital.
+  this->Write(initial_value);
 }
 
-DigitalOutput::DigitalOutput(GPIO_TypeDef *port, std::uint16_t pin, DOState::Value initial_value) : port(port), pin(pin) 
-// Sobrecarga do construtor que permite definir um valor inicial específico para o pino digital.
-{
-    this->Write(initial_value);  // Define o estado inicial do pino digital conforme especificado pelo usuário.
-}
-
-void DigitalOutput::Write(DOState::Value state) 
-// Função membro que define o estado do pino digital.
+/**
+ * @brief Escreve o estado do pino digital.
+ * 
+ * @param[in] state 
+ */
+void DigitalOutput::Write(Proxies::DigitalState state) 
 {   
-    if (state == DOState::Setted) 
-    // Verifica se o estado desejado é Setted.
-    {
-        HAL_GPIO_WritePin(this->port, this->pin, GPIO_PIN_SET);  // Define o pino como HIGH.
-    }
-    else 
-    // Caso contrário, define o estado como Unsetted.
-    {
-        HAL_GPIO_WritePin(this->port, this->pin, GPIO_PIN_RESET);  // Define o pino como LOW.
-    }
+  // Verifica o estado desejado.
+  if (state == Proxies::DigitalState::High) 
+  {
+    // Define o pino como SET.
+    HAL_GPIO_WritePin(&this->port, this->pin, GPIO_PIN_SET);
+  }
+  else 
+  {
+    // Define o pino como RESET.
+    HAL_GPIO_WritePin(&this->port, this->pin, GPIO_PIN_RESET);
+  }
 }
 
-DOState::Value DigitalOutput::Read() 
-// Função membro que lê o estado atual do pino digital.
+/**
+ * @brief Le o estado atual do pino digital.
+ * 
+ * @return Proxies::DigitalState 
+ */
+Proxies::DigitalState DigitalOutput::Read() 
 {
-    GPIO_PinState const pin_state = HAL_GPIO_ReadPin(this->port, this->pin);  // Lê o estado do pino GPIO especificado.
-    DOState::Value digital_output_state = DOState::Unsetted;  // Inicializa a variável de estado digital como Unsetted.
+  // Lê o estado do pino GPIO especificado.
+  GPIO_PinState const pin_state = HAL_GPIO_ReadPin(&this->port, this->pin);
+  // Inicializa a variável de estado digital como Low.
+  Proxies::DigitalState digital_output_state = Proxies::DigitalState::Low;
 
-    if (pin_state == GPIO_PIN_SET) 
-    // Verifica se o estado do pino é SET.
-    {
-        digital_output_state = DOState::Setted;  // Se o pino está SET, atualiza o estado digital para Setted.
-    }
+  // Verifica se o estado do pino é SET.
+  if (pin_state == GPIO_PIN_SET) 
+  {
+    // Define o estado digital para High.
+    digital_output_state = Proxies::DigitalState::High;
+  }
 
-    return digital_output_state;  // Retorna o estado digital.
+  // Retorna o estado digital.
+  return digital_output_state;
 }
 
+/**
+ * @brief Alterna o estado atual do pino digital.
+ * 
+ */
 void DigitalOutput::Toggle() 
-// Função membro que alterna o estado atual do pino digital.
 {
-    if (this->Read() == DOState::Setted) 
-    // Verifica se o estado atual é Setted.
-    {
-        this->Write(DOState::Unsetted);  // Se estiver Setted, muda para Unsetted.
-    }
-    else 
-    // Caso contrário, muda para Setted.
-    {
-        this->Write(DOState::Setted);  // Se estiver Unsetted, muda para Setted.
-    }
+  // Verifica o estado atual.
+  if (this->Read() == Proxies::DigitalState::High) 
+  {
+    // Se estiver High, muda para Low.
+    this->Write(Proxies::DigitalState::Low);
+  }
+  else
+  {
+    // Se estiver Low, muda para High.
+    this->Write(Proxies::DigitalState::High);
+  }
 }
 
-DigitalOutput::~DigitalOutput() 
-// Destrutor da classe DigitalOutput. Atualmente, não realiza nenhuma ação específica.
-{
-}
+DigitalOutput::~DigitalOutput() {}

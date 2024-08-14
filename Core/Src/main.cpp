@@ -49,11 +49,11 @@ DAC_HandleTypeDef hdac;  // Manipulador do periférico DAC.
 TIM_HandleTypeDef htim2;  // Manipulador do periférico TIM2.
 
 /* USER CODE BEGIN PV */
-static SensorAdapter some_sensor = SensorAdapter(&hadc1, 1u);  // Criação de um objeto SensorAdapter para o sensor, usando ADC1 e um tempo limite de 1.
-static LampAdapter some_lamp     = LampAdapter(&hdac, DAC_CHANNEL_1);  // Criação de um objeto LampAdapter para o DAC, usando o canal 1.
-static ButtonAdapter blue_button = ButtonAdapter(ButtonType::BUTTON_BLUE);  // Criação de um objeto ButtonAdapter para o botão azul.
-static LedAdapter led_4 = LedAdapter(LedType::LD4);  // Criação de um objeto LedAdapter para o LED LD4.
-static LedAdapter led_5 = LedAdapter(LedType::LD5);  // Criação de um objeto LedAdapter para o LED LD5.
+static ButtonAdapter blue_button = ButtonAdapter(Adapters::ButtonType::BUTTON_BLUE); // Criação de um objeto ButtonAdapter para o botão azul.
+static LedAdapter led_4          = LedAdapter(Adapters::LedType::LD4);               // Criação de um objeto LedAdapter para o LED LD4.
+static LedAdapter led_5          = LedAdapter(Adapters::LedType::LD5);               // Criação de um objeto LedAdapter para o LED LD5.
+static SensorAdapter some_sensor = SensorAdapter(hadc1, 1u);                         // Criação de um objeto SensorAdapter para o sensor, usando ADC1 e um tempo limite de 1ms.
+static LampAdapter some_lamp     = LampAdapter(hdac, DAC_CHANNEL_1);                 // Criação de um objeto LampAdapter para o DAC, usando o canal 1.
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/

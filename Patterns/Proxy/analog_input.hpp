@@ -1,23 +1,22 @@
 
-#ifndef ANALOG_INPUT_HPP__  // Prevenção contra inclusão múltipla do arquivo de cabeçalho.
+#ifndef ANALOG_INPUT_HPP__
 #define ANALOG_INPUT_HPP__
 
-#include <cstdint>  // Inclui a biblioteca padrão de tipos inteiros de largura fixa (como uint32_t).
-#include "core.h"  // Inclui um cabeçalho adicional que contém definições e declarações usadas neste arquivo.
+#include <cstdint>
 
-class AnalogInput 
-// Declaração da classe AnalogInput.
-{
+#include "proxies.hpp"
+
+class AnalogInput {
 public:
-    AnalogInput(ADC_HandleTypeDef *hadc, std::uint32_t timeout);  // Declaração do construtor.
-    void Sample();  // Declaração da função membro que inicia a amostragem do ADC.
-    std::uint32_t Get();  // Declaração da função membro que retorna o valor convertido do ADC.
-    ~AnalogInput();  // Declaração do destrutor.
+  AnalogInput(Proxies::AnalogInput &hadc, Proxies::Timeout timeout_ms);
+  void Sample();
+  Proxies::ADCValue Get();
+  ~AnalogInput();
 
 private:
-    ADC_HandleTypeDef *hadc;  // Ponteiro para a estrutura de controle do ADC.
-    std::uint32_t timeout;  // Tempo limite para a operação de conversão do ADC.
-    std::uint32_t value;  // Armazena o valor convertido do ADC.
+  Proxies::AnalogInput &hadc; // Ponteiro para a estrutura de controle do ADC.
+  Proxies::Timeout timeout_ms; // Tempo limite para a operação de conversão do ADC.
+  Proxies::ADCValue value;    // Armazena o valor convertido do ADC.
 };
 
-#endif // !ANALOG_INPUT_HPP__  // Fim da prevenção contra inclusão múltipla do arquivo de cabeçalho.
+#endif // ANALOG_INPUT_HPP__
